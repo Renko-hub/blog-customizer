@@ -1,5 +1,3 @@
-// src\ui\select\hooks\useEnterSubmit.ts
-
 import { useEffect } from 'react';
 
 type UseEnterSubmit = {
