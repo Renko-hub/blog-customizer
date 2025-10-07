@@ -26,7 +26,7 @@ import {
 import { useOutsideClickClose } from 'src/ui/select/hooks/useOutsideClickClose';
 
 // Интерфейс значений формы
-import { FormValues } from 'src/index';
+import { FormValues } from 'src/App';
 
 // Определяем интерфейс свойств компонента
 type ArticleParamsFormProps = {
