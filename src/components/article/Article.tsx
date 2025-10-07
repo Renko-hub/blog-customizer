@@ -8,16 +8,21 @@ import { Text } from 'src/ui/text';
 
 import styles from './Article.module.scss';
 import { OnClick } from 'src/ui/arrow-button/ArrowButton';
+import { CSSProperties } from 'react';
 
-// Интерфейс свойств компонента (добавление нового свойства handleClose)
+// Интерфейс свойств компонента
 interface PropsArticle {
 	handleClose: OnClick;
+	customStyles?: CSSProperties; // Новый пропс для стилей, должен устранить ошибку с передачей стилей
 }
 
-// Экспортированный компонент Article с новым параметром handleClose
-export const Article = ({ handleClose }: PropsArticle) => {
+// Экспортированный компонент Article
+export const Article = ({ handleClose, customStyles }: PropsArticle) => {
 	return (
-		<article className={clsx(styles.article)} onClick={handleClose}>
+		<article
+			className={clsx(styles.article)}
+			style={customStyles}
+			onClick={handleClose}>
 			<Text as='h1' size={45} weight={800} uppercase dynamicLite>
 				Портрет Западной Швейцарии
 			</Text>
@@ -28,7 +33,7 @@ export const Article = ({ handleClose }: PropsArticle) => {
 			</div>
 			<img className={styles.image} src={plane} alt='Картинка самолета' />
 			<Text dynamic size={18} fontStyle='italic'>
-				Фото: Hans-Peter Gauster  —  Bombardier CSeries CS300 HB-JCA © 2017 CC
+				Фото: Hans-Peter Gauster — Bombardier CSeries CS300 HB-JCA © 2017 CC
 				BY-SA 2.0
 			</Text>
 			<Text dynamic size={18}>
